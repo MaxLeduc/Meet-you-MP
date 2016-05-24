@@ -13,6 +13,8 @@ mpInfo.postalCodeUser = [];
 mpInfo.voteUrl = [];
 mpInfo.ballots = [];
 mpInfo.description = [];
+mpInfo.counterBillObject = 0;
+mpInfo.counter = 0;
 
 //init - needs to listen to form submit, retrieve the information(postal code), them activates the getData function
 mpInfo.init = function(){
@@ -36,6 +38,9 @@ mpInfo.init = function(){
 		mpInfo.voteUrl = [];
 		mpInfo.ballotCasted = [];
 		mpInfo.ballotDescription = [];
+		mpInfo.counterBillObject = 0;
+		mpInfo.counter = 0;
+
 	});
 };
 
@@ -302,8 +307,6 @@ mpInfo.mpBallots = function(ballotsUrl){
 	});
 };
 
-mpInfo.counterBillObject = 0;
-
 mpInfo.getBillData = function(){
 	//use the urls in the array to pass three calls to get the 'bill' object in which the description
 	//and the outcome of the vote are located in
@@ -336,7 +339,6 @@ mpInfo.getBillData = function(){
 
 //the counter is there to deny the display vote function to be called too soon
 //before the objects are actually in the array
-mpInfo.counter = 0;
 
 mpInfo.displayVote = function(){
 	if (mpInfo.counter < 2) {
