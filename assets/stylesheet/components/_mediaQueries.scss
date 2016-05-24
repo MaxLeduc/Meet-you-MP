@@ -1,0 +1,282 @@
+@media (max-width:1150px){
+
+	header{
+
+		form{
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+			
+			label{
+				margin-bottom:10px;
+			}
+
+			.formInput{
+				display:inline-block;
+			}
+		}
+	}
+
+	.votes{
+
+		.voteSpan{
+			display:block;
+			margin-bottom:5px;
+		}
+	}
+}
+
+@media (max-width:940px){
+
+	section.mpProfile{
+
+		.mpInfoWrapper{
+			flex-direction:column;
+			align-items:center;
+		}
+
+		.articleWrapper{
+			width:100%;
+		}
+
+		.mpPersonnalInfo{
+			margin-bottom:30px;
+			width:100%;
+			display:flex;
+			justify-content:center;
+		}
+
+		.mpContactInfo{
+			text-align:center;
+			width:80%;
+			margin:0 auto;
+
+			div{
+				margin:0;
+			}
+		}
+
+		.twitterFeed{
+			width:100%;
+			margin-top:0px;
+		}
+	}
+
+	section.votes{
+
+		article{
+			display:block;
+
+			aside{
+				margin:0 auto;
+				width:100%;
+				flex-direction:row;
+			}
+
+			.description{
+				width:100%;
+			}
+
+			h4{
+				width:33.3%;
+			}
+		}
+
+		.voteSpan{
+			display:inline-block;
+		}
+	}
+}
+
+@media (max-width:768px){
+
+	section.votes{
+		.voteSpan{
+			display:block;
+		}
+	}
+}
+
+@media (max-width:697px){
+
+	header{
+		.hero-text{
+			border-bottom:2px solid $orange;
+
+			h1{
+				@include font-size(24);
+			}
+
+			h5{
+				display:none;
+			}
+		}
+
+		.hero-text:after{
+			display:none;
+		}
+
+		.hero-text:before{
+			display:none;
+		}
+
+		.formWrapper{
+			height:200px;
+			text-align:center;
+
+			label{
+				margin-bottom:20px;
+			}
+
+			input[name=postalCode]{
+				width:100%;
+				margin-bottom:20px;
+			}
+		}
+	}
+
+	section.votes{
+		article:before{
+			left:45%;
+		}
+
+		article:after{
+			left:45.3%;
+		}
+	}
+}
+
+@media (max-width:590px){
+
+	section.mpProfile{
+
+		.mpContactInfo{
+			width:100%;
+		}
+	}
+
+	section.votes{
+
+		article aside{
+			flex-direction:column;
+			align-items:center;
+
+			h4{
+				width:100%;
+			}
+		}
+	}
+}
+
+@media (max-width:480px){
+
+	header{
+		.formWrapper{
+			width:100%;
+		}
+	}
+
+	.subHeader:after{
+		left:29%;
+	}
+	
+	section.mpProfile {
+
+		.mpPersonnalInfo{
+			display:block;
+			text-align:center;
+			margin:0;
+			margin-bottom:20px;
+
+			figure{
+				margin-bottom:20px;
+			}
+		}
+	}
+
+	section.votes{
+		
+		.subHeader:after{
+			left:29%;
+		}
+
+		article:before{
+			left:42%;
+		}
+
+		article:after{
+			left:42.3%;
+		}
+
+		article p{
+			text-align:center;
+		}
+
+		article h3{
+			margin-top:40px;
+			text-align:center;
+		}
+	}
+
+	footer{
+
+		p{
+			text-align:center;
+			@include font-size(12);
+		}
+
+		.bottom-footer{
+			display:block;
+			text-align:center;
+		}
+
+		.smWrapper{
+			width:100%;
+			margin-bottom:20px;
+		}
+	}
+}
+
+@media (max-width:381px){
+
+	header .formWrapper{
+			height:250px;
+	}
+
+	section.mpProfile{
+
+		.twitterFeed{
+			display:none;
+		}
+	}
+
+	section.votes{
+	
+
+		.subHeader:after{
+			left:26%;
+		}
+
+		article:before{
+			left:39%;
+		}
+
+		article:after{
+			left:39.3%;
+		}
+	}
+}
+
+@media (max-width:320px){
+
+	.subHeader:after{
+		left:22%;
+	}
+
+	section.votes{
+		
+		.subHeader:after{
+			left:22%;
+		}
+	}
+}

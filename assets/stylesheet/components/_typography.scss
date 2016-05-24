@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Karla|Libre+Baskerville);
+
+$fontsans:'Karla', sans-serif;
+
+$fontserif: 'Libre+Baskerville', serif;
+
+@mixin font-size($size-value){
+	font-size:$size-value * 1px;
+	font-size:($size-value/10) * 1rem;
+}
+
+//colors
+
+$orange: rgb(239, 72, 54);
+$grey:rgb(47, 47, 47);
+
+//body
+
+body{
+	font-size:62.5%;
+	margin-top:-20px;
+}
+
+/* font styling */
+
+h1{
+	@include font-size(32);
+	font-family:$fontsans;
+	font-weight:bold;
+	letter-spacing:3px;
+}
+
+h2{
+	@include font-size(22);
+	font-family:$fontsans;
+}
+
+h3{
+	@include font-size(18);
+	font-family:$fontsans;
+}
+
+h4{
+	@include font-size(16);
+	font-family:$fontsans;
+}
+
+h5{
+	@include font-size(14)
+	font-family:$fontsans;
+}
+
+h6{
+	@include font-size(12)
+	font-family:$fontsans;
+}
+
+li{
+	@include font-size(12)
+	font-family:$fontsans;
+}
+
+p{
+	@include font-size(12)
+	font-family:$fontsans;
+}
+
+span.orange{
+	color:$orange;
+}
