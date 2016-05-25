@@ -245,6 +245,10 @@
 
 	section.mpProfile{
 
+		.subHeader:after{
+			left:24%;
+		}
+
 		.twitterFeed{
 			display:none;
 		}
@@ -254,7 +258,7 @@
 	
 
 		.subHeader:after{
-			left:26%;
+			left:24%;
 		}
 
 		article:before{

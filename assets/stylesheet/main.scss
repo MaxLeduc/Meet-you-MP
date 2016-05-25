@@ -13,6 +13,7 @@
 header{
 	background:linear-gradient(0deg, rgba(47, 47, 47, 0.8), rgba(47, 47, 47, 0.8)), url('../images/Parliament_Hill.jpg');
 	background-size:cover;
+	background-position:center;
 	position:relative;
 	margin-top:20px;
 
@@ -131,7 +132,7 @@ header{
 
 		img{
 			width:60px;
-			height:20px;
+			height:15px;
 			display:block;
 			margin:0 auto;
 		}
@@ -176,7 +177,7 @@ header{
 
 section.mpProfile{
 	text-align:center;
-	margin:50px 0;
+	padding:50px 0;
 	display:none;
 
 	.mpInfoWrapper{
@@ -356,6 +357,22 @@ section.votes{
 
 	article:last-child{
 		margin-bottom: 0px;
+	}
+
+	button{
+		@include font-size(14);
+		background:transparent;
+		border:2px solid $orange;
+		padding:10px 20px;
+		margin:5px;
+		font-weight:bold;
+		transition: all 0.5s ease;
+		&:hover{
+			color:$orange;
+		}
+		&:focus{
+			color:$orange;
+		}
 	}
 }
 

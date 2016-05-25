@@ -287,6 +287,7 @@ span.orange {
 header {
   background: linear-gradient(0deg, rgba(47, 47, 47, 0.8), rgba(47, 47, 47, 0.8)), url("../images/Parliament_Hill.jpg");
   background-size: cover;
+  background-position: center;
   position: relative;
   margin-top: 20px;
 }
@@ -433,7 +434,7 @@ header .formWrapper {
 
 header .formWrapper img {
   width: 60px;
-  height: 20px;
+  height: 15px;
   display: block;
   margin: 0 auto;
 }
@@ -482,7 +483,7 @@ header label {
 
 section.mpProfile {
   text-align: center;
-  margin: 50px 0;
+  padding: 50px 0;
   display: none;
 }
 
@@ -698,6 +699,25 @@ section.votes article:after {
 
 section.votes article:last-child {
   margin-bottom: 0px;
+}
+
+section.votes button {
+  font-size: 14px;
+  font-size: 1.4rem;
+  background: transparent;
+  border: 2px solid #ef4836;
+  padding: 10px 20px;
+  margin: 5px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+section.votes button:hover {
+  color: #ef4836;
+}
+
+section.votes button:focus {
+  color: #ef4836;
 }
 
 footer {
@@ -955,11 +975,14 @@ footer h6 {
   header .formWrapper {
     height: 250px;
   }
+  section.mpProfile .subHeader:after {
+    left: 24%;
+  }
   section.mpProfile .twitterFeed {
     display: none;
   }
   section.votes .subHeader:after {
-    left: 26%;
+    left: 24%;
   }
   section.votes article:before {
     left: 39%;
