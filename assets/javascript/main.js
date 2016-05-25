@@ -123,7 +123,7 @@ mpInfo.runRCI = function(selectedMP){
 	var hillOfficeFax = $('<li>').append('Fax: ' + hillOffice.fax);
 	// console.log(hillOfficefax);
 
-	var hillOfficeAdress = $('<li>').append('Adress: ' + hillOffice.postal);
+	var hillOfficeAdress = $('<li>').append('Address: ' + hillOffice.postal);
 	// console.log(hillOfficeAdress);
 
 	var hillOfficeTel = $('<li>').append('Telephone: ' + hillOffice.tel);
@@ -142,7 +142,7 @@ mpInfo.runRCI = function(selectedMP){
 	var constituencyOfficeFax = $('<li>').text('Fax: ' + constituencyOffice.fax);
 	// console.log(constituencyOfficeFax);
 
-	var constituencyOfficeAdress = $('<li>').text('Adress: ' + constituencyOffice.postal);
+	var constituencyOfficeAdress = $('<li>').text('Address: ' + constituencyOffice.postal);
 	// console.log(constituencyOfficeAdress);
 
 	var constituencyOfficeTel = $('<li>').text('Telephone: ' + constituencyOffice.tel);
