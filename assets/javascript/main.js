@@ -38,9 +38,10 @@ mpInfo.init = function(){
 };
 
 mpInfo.checkPostalCode = function(postalCodeUser){
-		var re = /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i;
+		var re = /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i;
 	    var confirmationPostal = re.exec(postalCodeUser);
 	    if (confirmationPostal !== null){
+	        postalCodeUser = postalCodeUser.replace(/\s+/g,'');
 	        mpInfo.getData(postalCodeUser);
 	    }
 	    else {
@@ -188,12 +189,12 @@ mpInfo.runOP = function(mpObject){
 	var memberships = mpObject.memberships[0];
 
 	var party = $('<li>').append('<span>Political affiliation: </span>' + memberships.party.name.en);
-	console.log(memberships.party.name.en);
+	// console.log(memberships.party.name.en);
 	// adds party information to the ul (in the second place - so after 0)
 	$('.listInfo li:eq(0)').after(party);
 
 	var province = memberships.riding.province;
-	console.log(province);
+	// console.log(province);
 	//add the province to the riding li
 	$('#riding').append(' (' + province + ")");
 
@@ -217,13 +218,20 @@ mpInfo.runOP = function(mpObject){
 	// console.log(ballotsUrl);
 
 	mpInfo.mpBallots(ballotsUrl);
-	console.log(ballotsUrl);
+	// console.log(ballotsUrl);
 
 	//gets url for the mp speeches
 	var speechesUrl = mpObject.related.speeches_url;
 	// console.log(speechesUrl);
 	$('.mpProfile').css('display', 'block');
 	$('.favoriteWord').css('display', 'flex');
+	// console.log($('#mpProfile').offset().top);
+	$('section.votes').css('display', 'block');
+	$('.formWrapper form').css('display', 'flex');
+	$('.formWrapper img').css('display', 'none');
+	$('html, body').animate({
+		scrollTop: $('#mpProfile').offset().top
+	}, 1000);
 };
 
 //twitter
@@ -281,18 +289,18 @@ mpInfo.mpBallots = function(ballotsUrl){
 	}).then(function(ballotsObject){
 		// console.log(ballotsObject);
 		var ballotsArray = ballotsObject.objects;
-		console.log(ballotsObject.objects);
+		// console.log(ballotsObject.objects);
 		// console.log(ballotsArray);
 		//for loops is looping the first three objects of the array and retrieves the
 		//mp ballot and the url to access the details of the bill
 		for (i = 0; i < 3; i++) {
 			var billUrl = ballotsArray[i].vote_url;
-			console.log(billUrl);
+			// console.log(billUrl);
 			var ballotCasted = ballotsArray[i].ballot;
 			mpInfo.ballots.push(ballotCasted);
 			// console.log(mpInfo.ballots);
 			mpInfo.voteUrl.push(billUrl);
-			console.log(mpInfo.voteUrl[0], mpInfo.voteUrl[1], mpInfo.voteUrl[2]);
+			// console.log(mpInfo.voteUrl[0], mpInfo.voteUrl[1], mpInfo.voteUrl[2]);
 			mpInfo.getBillData();
 		};
 	});
@@ -307,16 +315,16 @@ mpInfo.getBillData = function(){
 		// console.log(mpInfo.voteUrl[0], mpInfo.voteUrl[1], mpInfo.voteUrl[2]);
 	} else {
 		for (i=0; i < 3; i++){
-			console.log(i);
-			console.log(mpInfo.voteUrl[i])
+			// console.log(i);
+			// console.log(mpInfo.voteUrl[i])
 		$.ajax({
 			url:mpInfo.opApiUrl + mpInfo.voteUrl[i],
 			method:'GET',
 			dataType:'json',
 			async:false
 		}).then(function(billObject){
-			console.log(billObject);
-			console.log(mpInfo.voteUrl[0], mpInfo.voteUrl[1], mpInfo.voteUrl[2]);
+			// console.log(billObject);
+			// console.log(mpInfo.voteUrl[0], mpInfo.voteUrl[1], mpInfo.voteUrl[2]);
 			//storing the 3 different objects in the description thing
 			mpInfo.description.push(billObject);
 			// console.log(mpInfo.description);
@@ -349,12 +357,6 @@ mpInfo.displayVote = function(){
 			var articleAside = $('<aside>').append(ballotDate, ballotCasted, ballotResult);
 			// console.log(articleClass);
 			$(articleClass).append(articleIssue, articleAside);
-			$('section.votes').css('display', 'block');
-			$('.formWrapper form').css('display', 'flex');
-			$('.formWrapper img').css('display', 'none');
-			$('html, body').animate({
-				scrollTop: $('#mpProfile').offset().top
-			}, 1000);
 		}
 	}
 }
