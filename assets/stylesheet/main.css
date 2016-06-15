@@ -306,74 +306,6 @@ header .wrapper {
   padding: 30px 0;
 }
 
-header nav {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 80px;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-header nav #logo {
-  fill: #ef4836;
-  width: 75px;
-  height: 75px;
-  padding: 15px;
-  transition: all 0.5s ease;
-}
-
-header nav #logo:hover {
-  fill: white;
-}
-
-header nav #logo:focus {
-  fill: white;
-}
-
-header nav button {
-  font-size: 14px;
-  font-size: 1.4rem;
-  background: transparent;
-  border: 2px solid #ef4836;
-  color: white;
-  padding: 10px 20px;
-  margin: 5px;
-  transition: all 0.5s ease;
-}
-
-header nav button:hover {
-  color: #ef4836;
-}
-
-header nav button:focus {
-  color: #ef4836;
-}
-
-header button[type=submit] {
-  border: 2px solid #ef4836;
-  background: none;
-  color: white;
-  padding: 2px 15px;
-  transition: all 0.5s ease;
-}
-
-header button[type=submit]:hover {
-  color: #ef4836;
-}
-
-header button[type=submit]:focus {
-  color: #ef4836;
-}
-
-header svg {
-  width: 15%;
-}
-
 header .hero-text {
   border: 2px solid #ef4836;
   border-bottom: none;
@@ -459,6 +391,26 @@ header label {
   line-height: 36px;
 }
 
+header #postalCode {
+  padding-left: 10px;
+}
+
+header button[type=submit] {
+  border: 2px solid #ef4836;
+  background: none;
+  color: white;
+  padding: 2px 15px;
+  transition: all 0.5s ease;
+}
+
+header button[type=submit]:hover {
+  color: #ef4836;
+}
+
+header button[type=submit]:focus {
+  color: #ef4836;
+}
+
 .subHeader {
   padding: 20px 40px;
   border: 1px solid #2f2f2f;
@@ -471,7 +423,7 @@ header label {
 .subHeader:after {
   content: "Meet your MP";
   position: absolute;
-  top: -10px;
+  bottom: -10px;
   left: 33%;
   font-size: 12px;
   font-size: 1.2rem;
@@ -505,6 +457,8 @@ section.mpProfile .articleWrapper {
           justify-content: space-between;
   text-align: left;
   width: 50%;
+  background: rgba(47, 47, 47, 0.1);
+  padding-top: 20px;
 }
 
 section.mpProfile .mpPersonnalInfo {
@@ -552,7 +506,7 @@ section.mpProfile .mpContactInfo ul {
 }
 
 section.mpProfile .mpContactInfo li {
-  line-height: 25px;
+  line-height: 30px;
 }
 
 section.favoriteWord {
@@ -657,6 +611,7 @@ section.votes article .description {
 
 section.votes article h4 {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 section.votes article h4:last-child {
@@ -679,9 +634,8 @@ section.votes article:before {
   position: absolute;
   top: -30px;
   left: 47%;
-  border: 2px solid #ef4836;
-  border-radius: 50%;
   padding: 30px;
+  padding-right: 35px;
 }
 
 section.votes article:after {
@@ -723,14 +677,14 @@ section.votes button:focus {
 footer {
   background: #2f2f2f;
   color: white;
-  padding: 20px;
+  padding: 70px;
 }
 
 footer p {
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin-bottom: 40px;
-  line-height: 28px;
+  font-size: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  line-height: 35px;
 }
 
 footer a {
@@ -824,16 +778,13 @@ footer h6 {
   }
   section.mpProfile .mpPersonnalInfo {
     margin-bottom: 30px;
-    width: 100%;
+    width: 80%;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    margin: 0 auto;
   }
   section.mpProfile .mpContactInfo {
-    text-align: center;
     width: 80%;
     margin: 0 auto;
   }
@@ -859,6 +810,7 @@ footer h6 {
   }
   section.votes article h4 {
     width: 33.3%;
+    text-align: center;
   }
   section.votes .voteSpan {
     display: inline-block;
@@ -908,9 +860,6 @@ footer h6 {
 }
 
 @media (max-width: 590px) {
-  section.mpProfile .mpContactInfo {
-    width: 100%;
-  }
   section.votes article aside {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
@@ -936,6 +885,7 @@ footer h6 {
     text-align: center;
     margin: 0;
     margin-bottom: 20px;
+    width: 100%;
   }
   section.mpProfile .mpPersonnalInfo figure {
     margin-bottom: 20px;

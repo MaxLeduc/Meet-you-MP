@@ -41,13 +41,12 @@
 
 		.mpPersonnalInfo{
 			margin-bottom:30px;
-			width:100%;
+			width:80%;
 			display:flex;
-			justify-content:center;
+			margin:0 auto;
 		}
 
 		.mpContactInfo{
-			text-align:center;
 			width:80%;
 			margin:0 auto;
 
@@ -79,6 +78,7 @@
 
 			h4{
 				width:33.3%;
+				text-align:center;
 			}
 		}
 
@@ -151,7 +151,7 @@
 	section.mpProfile{
 
 		.mpContactInfo{
-			width:100%;
+			// width:100%;
 		}
 	}
 
@@ -187,6 +187,7 @@
 			text-align:center;
 			margin:0;
 			margin-bottom:20px;
+			width:100%;
 
 			figure{
 				margin-bottom:20px;

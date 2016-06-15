@@ -121,13 +121,13 @@ mpInfo.runRCI = function(selectedMP){
 	//organizing the offices adresses in li that we will then
 	//add to newly created ul, inside a detail tag
 	//we will also create a 'summary'
-	var hillOfficeFax = $('<li>').append('Fax: ' + hillOffice.fax);
+	var hillOfficeFax = $('<li>').append('<i class="fa fa-fax" aria-hidden="true"></i> ' + hillOffice.fax);
 	// console.log(hillOfficefax);
 
-	var hillOfficeAdress = $('<li>').append('Address: ' + hillOffice.postal);
+	var hillOfficeAdress = $('<li>').append('<i class="fa fa-building-o" aria-hidden="true"></i> ' + hillOffice.postal);
 	// console.log(hillOfficeAdress);
 
-	var hillOfficeTel = $('<li>').append('Telephone: ' + hillOffice.tel);
+	var hillOfficeTel = $('<li>').append('<i class="fa fa-phone" aria-hidden="true"></i> ' + hillOffice.tel);
 	// console.log(hillOfficePhone);
 
 	var hillOfficeList = $('<ul>').append(hillOfficeAdress, hillOfficeTel, hillOfficeFax);
@@ -140,13 +140,13 @@ mpInfo.runRCI = function(selectedMP){
 	var constituencyOffice = selectedMP.offices[1];
 	// console.log(constituencyOffice);
 
-	var constituencyOfficeFax = $('<li>').text('Fax: ' + constituencyOffice.fax);
+	var constituencyOfficeFax = $('<li>').append('<i class="fa fa-fax" aria-hidden="true"></i> ' + constituencyOffice.fax);
 	// console.log(constituencyOfficeFax);
 
-	var constituencyOfficeAdress = $('<li>').text('Address: ' + constituencyOffice.postal);
+	var constituencyOfficeAdress = $('<li>').append('<i class="fa fa-building-o" aria-hidden="true"></i> ' + constituencyOffice.postal);
 	// console.log(constituencyOfficeAdress);
 
-	var constituencyOfficeTel = $('<li>').text('Telephone: ' + constituencyOffice.tel);
+	var constituencyOfficeTel = $('<li>').append('<i class="fa fa-phone" aria-hidden="true"></i> ' + constituencyOffice.tel);
 	// console.log(constituencyOfficeTel);
 
 	var constituencyOfficeList = $('<ul>').append(constituencyOfficeAdress, constituencyOfficeTel, constituencyOfficeFax);
